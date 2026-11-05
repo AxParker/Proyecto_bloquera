@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bloquera Santa Fe – Calidad y Tradición</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<style>
+:root{--bg:#f4f4f2;--sf:#fff;--ink:#23272e;--mu:#5d6570;--ln:#d9dbd8;--bl:#12355b;--or:#f08a00;--dk:#1b2733;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171b20;--sf:#222830;--ink:#eceeee;--mu:#a3abb4;--ln:#38414b;--bl:#8fb8e8;--or:#ffa726;--dk:#0f1318}}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:14px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none;transition:transform .25s,box-shadow .25s,border-color .25s,opacity .6s}
+.card.rv.in:hover,.node.rv.in:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.14);border-color:var(--or)}
+.card.rv.in:active,.node.rv.in:active{transform:scale(.97)}
+.pop{animation:pop .5s ease}
+@keyframes pop{0%{transform:scale(1)}35%{transform:scale(.95)}65%{transform:scale(1.04);box-shadow:0 0 0 4px rgba(240,138,0,.45)}100%{transform:scale(1)}}
+.rv:not(.in) .bar i{width:0!important}.bar i{transition:width 1s ease}
+/* Vista enfocada (modal) */
+#fx{display:none;position:fixed;inset:0;z-index:70;align-items:center;justify-content:center;padding:1rem;background:rgba(10,15,20,.72);backdrop-filter:blur(5px);animation:fade .25s}#fx.on{display:flex}
+#fxc{max-width:min(620px,94vw);max-height:86vh;overflow:auto;padding:1.5rem;font-size:1.1rem;cursor:default;box-shadow:0 20px 60px rgba(0,0,0,.5);border-color:var(--or);animation:zoom .3s cubic-bezier(.2,.9,.3,1.2)}
+#fxc .text-sm,#fxc .text-xs{font-size:1rem}
+@keyframes zoom{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}.mu{color:var(--mu)}.ac{color:var(--or)}
+.btn{display:inline-block;padding:.8rem 1.2rem;border-radius:10px;font-weight:600;text-align:center;transition:transform .2s}.btn:active{transform:scale(.95)}
+.bp{background:var(--or);color:#1b1b1b}.bg{border:1px solid rgba(255,255,255,.5);color:#fff}
+/* Fondo: muro de bloques de concreto (patrón SVG) con deriva lenta */
+.hero{position:relative;overflow:hidden;color:#fff;background-color:#0e2540;background-image:linear-gradient(135deg,rgba(14,37,64,.92),rgba(18,53,91,.80)),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='80'%3E%3Cg fill='none' stroke='rgba(255,255,255,.14)' stroke-width='3'%3E%3Cpath d='M0 1.5H120M0 41.5H120M1.5 0V40M61.5 0V40M31.5 40V80M91.5 40V80'/%3E%3C/g%3E%3Crect x='4' y='4' width='52' height='32' fill='rgba(255,255,255,.06)'/%3E%3Crect x='64' y='4' width='52' height='32' fill='rgba(255,255,255,.02)'/%3E%3Crect x='34' y='44' width='52' height='32' fill='rgba(255,255,255,.03)'/%3E%3Crect x='94' y='44' width='22' height='32' fill='rgba(255,255,255,.07)'/%3E%3Crect x='4' y='44' width='22' height='32' fill='rgba(255,255,255,.07)'/%3E%3C/svg%3E");background-size:auto,180px 120px;animation:drift 60s linear infinite}
+@keyframes drift{to{background-position:0 0,360px 0}}
+/* Logo como fondo del encabezado (se activa con LOGO_URL) */
+.hero>div{position:relative;z-index:1}
+.hero::before{content:"";position:absolute;inset:0;background:var(--logo,none) no-repeat right 6% center/min(55%,560px);opacity:.22;pointer-events:none}
+.hero.inv::before{filter:grayscale(1) invert(1);mix-blend-mode:screen}
+@media(max-width:767px){.hero::before{background-position:center 85%;background-size:85%;opacity:.16}}
+h2.t{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--bl)}
+.step{transition:.2s}.step.on{border-color:var(--or);box-shadow:0 0 0 2px var(--or) inset}
+.bar{height:8px;border-radius:4px;background:var(--ln);overflow:hidden}.bar i{display:block;height:100%;background:var(--or)}
+table{width:100%;font-size:.875rem}td,th{padding:.4rem .5rem;border-bottom:1px solid var(--ln);text-align:left}
+.node{border:1px solid var(--ln);border-radius:10px;padding:.5rem;text-align:center;font-size:.85rem;background:var(--sf)}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-50" style="background:var(--dk);padding-top:env(safe-area-inset-top,0px)">
+<nav class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between text-white">
+<a href="#inicio" class="flex items-center gap-2 font-extrabold"><span id="logo" class="inline-grid place-items-center w-12 h-12 text-lg rounded" style="background:var(--or);color:#1b1b1b">BSF</span><span class="leading-tight text-sm sm:text-base">Bloquera Santa Fe<br><span class="font-normal text-xs opacity-75">Calidad y Tradición</span></span></a>
+<button id="mb" class="md:hidden px-3 py-2 border border-white/30 rounded" aria-label="Menú">☰</button>
+<ul id="menu" class="hidden md:flex flex-col md:flex-row w-full md:w-auto gap-0 md:gap-6 text-base md:text-sm pt-2 md:pt-0"><li><a href="#proyecto">Proyecto</a></li><li><a href="#mercado">Mercado</a></li><li><a href="#tecnico">Técnico</a></li><li><a href="#organizacion">Organización</a></li></ul>
+</nav></header>
+<main>
+<section id="inicio" class="hero"><div class="max-w-6xl mx-auto px-4 py-14 md:py-28">
+<p class="uppercase tracking-widest text-sm" style="color:#ffb74d">Elaboración y Evaluación de Proyectos · UMG Sede Coatepeque</p>
+<h1 class="text-4xl md:text-6xl font-extrabold mt-3">Bloquera Santa Fe<br><span style="color:#ffb74d">Calidad y Tradición</span></h1>
+<p class="mt-5 text-lg md:text-xl max-w-2xl opacity-90">Industrialización de bloques de concreto en Coatepeque.</p>
+<div class="mt-8 grid grid-cols-2 sm:flex sm:flex-wrap gap-3"><a href="#proyecto" class="btn bp">Sobre el proyecto</a><a href="#mercado" class="btn bg">Estudio de mercado</a><a href="#tecnico" class="btn bg">Proceso productivo</a><a href="#organizacion" class="btn bg">Ubicación</a></div>
+</div></section>
+
+<section id="proyecto" class="max-w-6xl mx-auto px-4 py-16">
+<h2 class="t">Sobre el Proyecto</h2>
+<div class="grid md:grid-cols-2 gap-6 mt-6">
+<div class="card p-6"><h3 class="font-bold text-lg mb-2">La iniciativa</h3><p class="mu">Estudio de factibilidad para abrir una fábrica de bloques de concreto en Coatepeque, Quetzaltenango, elaborado por estudiantes de Octavo Ciclo de la Facultad de Ciencias de la Administración (UMG, Sede Coatepeque). Integra los estudios de mercado, técnico, ambiental y financiero. Período de ejecución: 2 de agosto al 15 de noviembre de 2026.</p></div>
+<div class="card p-6"><h3 class="font-bold text-lg mb-2">El problema que resuelve</h3><p class="mu">En la ciudad predomina el block artesanal de poma, de calidad irregular y que no cumple las normas de construcción. El block de concreto normado se compra en la capital: llega caro, con escasez y demoras. Santa Fe propone producirlo localmente, con calidad uniforme y sismorresistente.</p></div></div>
+<div class="grid sm:grid-cols-3 gap-4 mt-6">
+<div class="card p-5"><b>🧱 Antes</b><p class="mu text-sm mt-1">Block de poma artesanal, sin uniformidad de resistencia.</p></div>
+<div class="card p-5" style="border-color:var(--or)"><b>🏗️ Propuesta</b><p class="mu text-sm mt-1">Block de concreto Tipo B y C (15×20×40 cm), normado.</p></div>
+<div class="card p-5"><b>🎯 Objetivo</b><p class="mu text-sm mt-1">Determinar la factibilidad: organigrama, costos, utilidad, punto de equilibrio, VAN y TIR.</p></div></div>
+</section>
+
+<section id="mercado" style="background:var(--sf);border-block:1px solid var(--ln)"><div class="max-w-6xl mx-auto px-4 py-16">
+<h2 class="t">Estudio de Mercado</h2>
+<div class="grid md:grid-cols-3 gap-4 mt-6">
+<div class="card p-5"><h3 class="font-bold">📈 Construcción en crecimiento</h3><p class="mu text-sm mt-1">Según Interbanco, el volumen de cemento (indicador de actividad constructora) casi se duplicó entre 2018 y 2026. Cementos Progreso estima crecimiento de demanda de 10% a 30%.</p></div>
+<div class="card p-5"><h3 class="font-bold">⚠️ Demanda insatisfecha</h3><p class="mu text-sm mt-1">Solo una fábrica regional (Pajapita). El resto revende block de la capital; despachos de 1,000 bloques tardan de 3 a 10 días.</p></div>
+<div class="card p-5"><h3 class="font-bold">💰 Precios actuales</h3><p class="mu text-sm mt-1">El block de concreto en Coatepeque se vende entre Q6.75 y Q7.50 (con IVA), según el comercio y la facturación.</p></div></div>
+<h3 class="font-bold text-xl mt-10">Encuesta a profesionales y constructores</h3>
+<p class="mu text-sm">Ingenieros, arquitectos, constructores y albañiles. Resultados por pregunta (%).</p>
+<div id="enc" class="grid md:grid-cols-2 gap-4 mt-4"></div>
+<div class="card p-5 mt-6" style="border-left:5px solid var(--or)"><b>Propuesta de valor:</b> <span class="mu text-sm">resistencia garantizada con certificados de laboratorio por lote, entregas puntuales, descuentos por volumen y fidelización. Producto estrella: block Clase C 15×20×40 cm (66 kg/cm²). Existencia inicial: 15,000 bloques (10,000 Tipo C y 5,000 Tipo B). Cobertura de hasta 50 km: Las Palmas, La Blanca, Pajapita y Tecún Umán.</span></div>
+</div></section>
+
+<section id="tecnico" class="max-w-6xl mx-auto px-4 py-16">
+<h2 class="t">Estudio Técnico y Proceso Productivo</h2>
+<div class="grid md:grid-cols-2 gap-6 mt-6">
+<div class="card p-6"><h3 class="font-bold text-lg mb-2">⚙️ Maquinaria propuesta</h3>
+<p class="mu text-sm">Equipo vibrocompactador con componentes Mitsubishi y Siemens y moldes intercambiables para blocks de 10, 15 y 20 cm (y adoquines a futuro). Subprocesos automatizados: mezclado y vibrado.</p>
+<table class="mt-3"><tr><th>Modelo</th><td>HONGFO QT4-16</td></tr><tr><th>Ciclo</th><td>15–25 s</td></tr><tr><th>Presión</th><td>16 MPa</td></tr><tr><th>Potencia</th><td>23.3 kW</td></tr><tr><th>Palé</th><td>900×550 mm</td></tr></table>
+<p class="mt-3 text-sm"><b>Capacidad inicial:</b> 65,000 bloques/mes</p></div>
+<div class="card p-6"><h3 class="font-bold text-lg mb-2">✅ Materias primas</h3>
+<ul class="mu text-sm space-y-2"><li><b style="color:var(--ink)">Cemento ARI BLOCK</b> (Cementos Progreso), sacos de 42.5 kg.</li><li><b style="color:var(--ink)">Arena y polvillo de piedrín</b> bajo COGUANOR NGO 41007 (peso unitario 584 kg/m³, absorción 6.58%).</li><li><b style="color:var(--ink)">Agua</b> municipal o de pozo mecánico.</li></ul>
+<h4 class="font-semibold mt-4 text-sm">Resistencia del cemento (psi)</h4>
+<table><tr><th>Edad</th><th>Norma mín.</th><th>Cempro</th></tr><tr><td>1 día</td><td>1,740</td><td>2,800</td></tr><tr><td>3 días</td><td>3,480</td><td>4,000</td></tr><tr><td>7 días</td><td>—</td><td>5,000</td></tr><tr><td>28 días</td><td>—</td><td>&gt;5,800</td></tr></table></div></div>
+<h3 class="font-bold text-xl mt-12 mb-4">Fases del proceso <span class="mu text-sm font-normal">(toca una tarjeta)</span></h3>
+<div id="steps" class="grid grid-cols-2 md:grid-cols-6 gap-3"></div>
+<div id="sd" class="card p-5 mt-4" style="border-left:5px solid var(--or)"></div>
+<p class="mu text-sm mt-4">Proceso continuo o en serie, con producción programada según la demanda. Distribución de planta orientada al producto (18 × 16 m): recepción y almacén de materia prima, dosificación, mezclado, moldeado, curado, producto terminado, administración, mantenimiento y servicios.</p>
+</section>
+
+<section id="organizacion" style="background:var(--sf);border-block:1px solid var(--ln)"><div class="max-w-6xl mx-auto px-4 py-16">
+<h2 class="t">Organización y Ubicación</h2>
+<div class="grid md:grid-cols-2 gap-6 mt-6">
+<div class="card p-6"><h3 class="font-bold text-lg mb-2">📍 Localización</h3>
+<p class="mu text-sm">Salida de Coatepeque por la calzada Luis Flores Asturias hacia la ruta CA-2 Sur, rumbo a La Blanca, Pajapita y Tecún Umán, sin cruzar el casco urbano. Terreno de 1,343.50 m² (60 m de frente), arrendado por Q15,000 mensuales.</p>
+<ul class="mu text-sm mt-3 space-y-1"><li>✔ Acceso directo para transporte pesado</li><li>✔ Uso de suelo compatible (ruido, vibración y polvo)</li><li>✔ Energía trifásica y agua para la mezcla</li><li>✔ Conexión con Colomba, Flores y Génova</li></ul></div>
+<div class="card p-6"><h3 class="font-bold text-lg mb-3">👥 Estructura organizacional</h3>
+<div class="space-y-2">
+<div class="node font-bold text-white" style="background:var(--dk)">Gerente General <span class="font-normal opacity-75">(+ Asistente)</span></div>
+<div class="grid grid-cols-2 gap-2"><div class="node">Administración<br><span class="mu text-xs">Auxiliar · Atención al cliente</span></div><div class="node">Gerente de Operaciones<br><span class="mu text-xs">Equipo técnico</span></div><div class="node">Gerente de Ventas<br><span class="mu text-xs">Vendedores</span></div><div class="node">Gerente de Calidad<br><span class="mu text-xs">Ensayos y control</span></div></div></div></div></div>
+</div></section>
+</main>
+<footer style="background:var(--dk);color:#cfd5db;padding-bottom:calc(2rem + env(safe-area-inset-bottom,0px))"><div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm">
+<div id="footLogo" class="inline-flex items-center justify-center bg-white rounded-2xl p-3 mb-3 shadow-lg"><span class="font-extrabold text-2xl px-4 py-2" style="color:#12355b">BSF</span></div>
+<p class="font-bold text-white">Bloquera Santa Fe – Calidad y Tradición</p>
+<p class="mt-2">Equipo del Octavo Ciclo · Facultad de Ciencias de la Administración<br>Universidad Mariano Gálvez de Guatemala, Sede Coatepeque · Plan Domingo</p>
+
+<p class="mt-2 opacity-70">Proyecto académico, informativo y educativo.</p>
+<p class="mt-4 pt-4 border-t border-white/10 text-xs opacity-70">© 2026 Bloquera Santa Fe. Todos los derechos reservados.</p></div></footer>
+<div id="fx" role="dialog" aria-modal="true"><div id="fxc" class="card"></div></div>
+<script>
+/* LOGO: ruta de tu imagen (ej. "img/logo.png"); vacío = "BSF" */
+const LOGO_URL="img/logo.jpg";
+/* Modo del logo de fondo: "fondo-blanco" (logo con fondo blanco, se vuelve marca de agua clara) o "transparente" (PNG sin fondo, se ve tal cual) */
+const LOGO_BG_MODE="fondo-blanco";
+if(LOGO_URL){const im=c=>`<img src="${LOGO_URL}" alt="Logo Bloquera Santa Fe" class="${c} w-auto object-contain">`;
+document.getElementById("footLogo").innerHTML=im("h-16 sm:h-20");
+document.getElementById("logo").outerHTML=`<span class="bg-white rounded-lg p-1 inline-flex">${im("h-11 sm:h-12")}</span>`;
+const h=document.getElementById("inicio");h.style.setProperty("--logo",`url("${LOGO_URL}")`);if(LOGO_BG_MODE==="fondo-blanco")h.classList.add("inv")}
+/* Encuesta (valores del estudio de mercado) */
+const ENC=[
+["¿Estaría interesado en una planta local de bloques?",[["Sí",70],["No",30]]],
+["¿Una fábrica cercana facilitaría su abastecimiento?",[["Sí",94],["No",6]]],
+["¿Estaría dispuesto a probar una nueva marca?",[["Sí",92],["No",8]]],
+["Material que más utiliza",[["Poma",60],["Concreto",33],["Arcilla",7]]],
+["¿Le ha afectado la logística para abastecerse?",[["Sí",50],["A veces",40],["No",10]]],
+["Principal obstáculo de abastecimiento",[["Costo de flete",40],["Entrega demorada",36],["Escasez de stock",24]]],
+["¿Qué mejoraría del block actual?",[["Resistencia",54],["Precio",32],["Tamaño",14]]],
+["Residencia de los encuestados",[["Coatepeque",44],["La Blanca",27],["Tecún Umán",17],["Pajapita",7],["Colomba",4]]],
+["Medio preferido para cotizaciones",[["WhatsApp",43],["Llamada",32],["Visita",25]]]];
+document.getElementById("enc").innerHTML=ENC.map(([q,r])=>`<div class="card p-4"><b class="text-sm">${q}</b>${r.map(([l,v])=>`<div class="mt-2"><div class="flex justify-between text-xs mu"><span>${l}</span><b>${v}%</b></div><div class="bar"><i style="width:${v}%"></i></div></div>`).join("")}</div>`).join("");
+/* Fases */
+const F=[["Recepción","📦","Ingreso y revisión de cemento ARI BLOCK, arena de río, polvillo de piedrín y agua; almacenamiento ordenado para un suministro constante."],
+["Dosificación","⚖️","Pesaje de cada componente según el diseño de mezcla del tipo de bloque (B o C)."],
+["Mezclado","🌀","Mezcla homogénea con el agua necesaria; subproceso automatizado y alimentación continua a la tolva."],
+["Vibrocompactación","📳","Llenado de moldes (10, 15 o 20 cm), vibrado, compactación y desmolde sobre tarimas."],
+["Curado","💧","Traslado cuidadoso al área de curado para alcanzar la resistencia; inspección de dimensiones, apariencia y ensayos."],
+["Despacho","🚚","Almacenamiento por lotes, control de inventario, carga y entrega a Coatepeque y municipios cercanos."]];
+const st=document.getElementById("steps"),sd=document.getElementById("sd");
+const show=k=>{st.querySelectorAll(".step").forEach((e,j)=>e.classList.toggle("on",j===k));sd.innerHTML=`<b>${k+1}. ${F[k][0]}</b><p class="mu mt-1">${F[k][2]}</p>`};
+st.innerHTML=F.map((f,k)=>`<button class="step card p-4 text-center" data-k="${k}"><div class="text-2xl">${f[1]}</div><div class="text-xs mu">Fase ${k+1}</div><div class="font-bold text-sm">${f[0]}</div></button>`).join("");
+st.onclick=e=>{const b=e.target.closest(".step");if(b)show(+b.dataset.k)};show(0);
+/* Menú móvil */
+const m=document.getElementById("menu");
+document.getElementById("mb").onclick=()=>{m.classList.toggle("hidden");m.classList.toggle("flex")};
+m.onclick=e=>{if(e.target.tagName==="A"&&innerWidth<768){m.classList.add("hidden");m.classList.remove("flex")}};
+m.querySelectorAll("a").forEach(a=>a.className="hover:text-orange-300 block py-3 md:py-1 border-b border-white/10 md:border-0");
+/* Animación al clic en cualquier cuadro */
+const fx=document.getElementById("fx"),fxc=document.getElementById("fxc");
+const closeFx=()=>{fx.classList.remove("on");document.body.style.overflow=""};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeFx()});
+document.addEventListener("click",e=>{
+if(e.target.closest("#fx")){if(e.target===fx||e.target.closest("#x"))closeFx();return}
+const c=e.target.closest(".card,.node");if(!c)return;
+if(c.classList.contains("step")){c.classList.remove("pop");void c.offsetWidth;c.classList.add("pop");return}
+fxc.innerHTML='<button id="x" class="float-right text-2xl leading-none px-2" aria-label="Cerrar">✕</button>'+c.innerHTML;
+fxc.scrollTop=0;fx.classList.add("on");document.body.style.overflow="hidden"});
+/* Aparición al hacer scroll */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll(".card,.node").forEach(c=>{c.classList.add("rv");io.observe(c)});
+</script>
+</body></html>
